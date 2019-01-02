@@ -4,8 +4,9 @@
 int yyparse (void);
 
 int main() {
-    printf("Hello from Main function!");
+    printf("--- Program start ---\n");
     yyparse();
+    printf("--- Program end ---\n");
 
     return 0;
 }

@@ -1,7 +1,11 @@
 %{
     #include "grammar.hh"
+
+    // Required
+    void yyerror(const char *s);
 %}
 
 %%
-"hello" { printf("GOODBYE\n"); }
+"hello" { return hello; }
+. { yyerror("Unexpected character"); }
 %%

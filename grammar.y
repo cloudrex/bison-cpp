@@ -4,9 +4,7 @@
     #include "grammar.hh"
     #include "lex.h"
 
-    //extern "C" int yylex(void);
-
-    
+    // Required
     void yyerror(const char *s);
 %}
 
@@ -14,8 +12,10 @@
 
 %start global
 
+%token hello
+
 %%
-global: 
+global: hello { printf("GOODBYE!\n"); }
       ;
 %%
 
@@ -26,6 +26,6 @@ int yywrap()
 }
 
 void yyerror(char const *x) {
-    printf("Error %s\n", x);
+    printf("--- Syntax error: %s ---\n", x);
     exit(1);
 }
