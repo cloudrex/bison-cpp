@@ -21,7 +21,6 @@ statement: T_TRUE T_END { ; }
          | T_FALSE T_END { ; }
          ;
 
-
 global: statement { ; }
       | global statement { ; }
       ;
