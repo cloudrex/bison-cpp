@@ -12,10 +12,18 @@
 
 %start global
 
-%token hello
+%token T_TRUE
+%token T_FALSE
+%token T_END
 
 %%
-global: hello { printf("GOODBYE!\n"); }
+statement: T_TRUE T_END { ; }
+         | T_FALSE T_END { ; }
+         ;
+
+
+global: statement { ; }
+      | global statement { ; }
       ;
 %%
 
