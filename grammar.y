@@ -1,10 +1,16 @@
 %{
-    int yylex(void);
-    void yyerror(char const *);
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include "grammar.hh"
+    #include "lex.h"
+
+    //extern "C" int yylex(void);
+
+    
+    void yyerror(const char *s);
 %}
 
 %require "3.2"
-%language "c++"
 
 %start global
 
