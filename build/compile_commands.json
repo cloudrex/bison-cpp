@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/atlas/Desktop/projects/d.gen/bison/cpp/build",
+  "command": "/usr/bin/g++-7   -I/usr/lib/llvm-6.0/include  -g   -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -o CMakeFiles/bison-test.dir/main.cpp.o -c /home/atlas/Desktop/projects/d.gen/bison/cpp/main.cpp",
+  "file": "/home/atlas/Desktop/projects/d.gen/bison/cpp/main.cpp"
+}
+]
