@@ -48,7 +48,6 @@ static int getToken() {
 
         return tok_identifier;
     }
-
     // Recognize numeric values (numbers) | TODO: Needs error validation, ex. 1.23.45.67 -> 1.23
     else if (isdigit(LastChar) || LastChar == '.') { // Number: [0-9.]+
         std::string NumStr;
@@ -63,13 +62,12 @@ static int getToken() {
 
         return tok_number;
     }
-
     // Recognize single-line comments (#)
     else if (LastChar == '#') {
         do {
             LastChar = getchar();
         }
-        while (LastChar != EOF && LastChar != '\n' && LastChar != "\r");
+        while (LastChar != EOF && LastChar != '\n' && LastChar != '\r');
 
         if (LastChar != EOF) {
             return getToken();
