@@ -1,43 +1,18 @@
 #pragma once
 
-class ExprAST
-{
-};
+#include <memory>
+#include <vector>
 
-class NumberExprAST
-{
-public:
-  NumberExprAST(double Val);
-};
+class ExprAST;
 
-class VariableExprAST
-{
-public:
-  VariableExprAST(const std::string &Name);
-};
+class NumberExprAST;
 
-class BinaryExprAST
-{
-public:
-  BinaryExprAST(char op, std::unique_ptr<ExprAST> LHS, std::unique_ptr<ExprAST> RHS);
-};
+class VariableExprAST;
 
-class CallExprAST
-{
-public:
-  CallExprAST(const std::string &Callee, std::vector<std::unique_ptr<ExprAST>> Args);
-};
+class BinaryExprAST;
 
-class PrototypeAST
-{
-public:
-  PrototypeAST(const std::string &name, std::vector<std::string> Args) : Name(name), Args(std::move(Args)) {}
+class CallExprAST;
 
-  std::string &getName();
-};
+class PrototypeAST;
 
-class FunctionAST
-{
-public:
-  FunctionAST(std::unique_ptr<PrototypeAST> Proto, std::unique_ptr<ExprAST> Body);
-};
+class FunctionAST;

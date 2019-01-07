@@ -7,6 +7,10 @@
 #include <map>
 #include <memory>
 #include <vector>
+#include "lexer.h"
+
+static std::string IdentifierStr; // Filled in if tok_identifier
+static double NumVal; // Filled in if tok_number
 
 enum Token {
     tok_eof = -1,
@@ -20,10 +24,7 @@ enum Token {
     tok_number = -5
 };
 
-static std::string IdentifierStr; // Filled in if tok_identifier
-static double NumVal; // Filled in if tok_number
-
-static int getToken() {
+int getToken() {
     static int LastChar = ' ';
 
     // Skip whitespace
